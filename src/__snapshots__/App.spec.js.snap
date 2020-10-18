@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders the Hello world 1`] = `
-<div>
-  Hello world
-</div>
+Array [
+  <React.Fragment>
+    <Header />
+    <Dashboard />
+    <Footer />
+  </React.Fragment>,
+]
 `;

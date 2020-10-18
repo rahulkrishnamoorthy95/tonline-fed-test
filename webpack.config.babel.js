@@ -90,6 +90,22 @@ const images = {
 	}
 };
 
+const scss = {
+	test: /\.scss$/,
+	exclude: /node_modules/,
+	use: [
+		'style-loader',
+        'css-loader',
+		{
+			loader: 'sass-loader',
+			options: {
+				// Prefer `dart-sass`
+				implementation: require('sass'),
+			},
+		},
+	],
+};
+
 export const devPlugins = [
 	new webpack.HotModuleReplacementPlugin(),
 	new webpack.DefinePlugin({
@@ -141,13 +157,13 @@ const defaultConfig = {
 		chunkFilename: `js/[name]-[chunkhash:8].${chunkSuffix}.js`
 	},
 	resolve: {
-		extensions: ['.js'],
+		extensions: ['.js', '.scss'],
 		alias: {
 			'@@': `${__dirname}/src/`
 		}
 	},
 	module: {
-		rules: [js, svg, images]
+		rules: [js, svg, images, scss]
 	},
 	optimization: {
 		splitChunks: {
@@ -176,7 +192,7 @@ const devConfig = {
 		https: true,
 		historyApiFallback: true,
 		publicPath: '/',
-		host: '0.0.0.0'
+		host: 'localhost'
 	}
 };
 const prdConfig = {

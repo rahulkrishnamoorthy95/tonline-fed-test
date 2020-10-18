@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Viewmore should render initial layout 1`] = `
+Array [
+  <div
+    className="view-more"
+  >
+    <button
+      className="button"
+      type="button"
+    >
+      View More
+    </button>
+  </div>,
+]
+`;
